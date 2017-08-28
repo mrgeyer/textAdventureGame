@@ -20,16 +20,19 @@ var character = {
     characterClass: prompt('These times are to test the strenths of our character. What were you before the war broke out(soldier,doctor or politician)').toLowerCase()
 }
 
-if (character.characterClass === 'soldier') {
-    character.strength += 5;
-}
-
-if (character.characterClass === 'politician') {
-    character.stealth += 5;
-}
-
-if (character.characterClass === 'doctor') {
-    character.health += 7;
+switch (character.characterClass) {
+    case 'soldier':
+        character.strength += 5;
+        break;
+    case 'politician':
+        character.stealth += 5;
+        break;
+    case 'doctor':
+        character.health += 7;
+        break;
+    default:
+        window.alert('You feel unprepared for the ensueing battle');
+        
 }
 
 var choice = window.prompt('The brave and mighty former ' + character.characterClass + ' ' + character.name + ' safly gets way from the attackers and hides himself in a store bathroom.But suddenly a soldier comes thier for searching What action will you take . Will you (attack) or (sneak )?').toLowerCase();
